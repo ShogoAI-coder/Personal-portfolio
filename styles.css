@@ -1,43 +1,33 @@
 /* =========================================================
    Ibrahim El Shorbagy: personal site
-   Editorial style · system fonts only · light/dark via OS setting
-   EDIT ME: change the colours in :root to restyle the whole site.
+   Editorial style · system fonts only · black & gold
    ========================================================= */
 
+/* EDIT ME: these colours restyle the whole site. */
 :root {
+  color-scheme: dark;
+
   /* Fonts: all built into the operating system, so it works offline */
   --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, Cambria, "Times New Roman", serif;
   --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 
-  /* Light theme */
-  --bg: #f6f3ee;          /* warm paper */
-  --bg-alt: #eee9e0;
-  --surface: #fffdf9;
-  --text: #1d1b17;
-  --muted: #5d574d;       /* 6.6:1 on --bg */
-  --line: #d9d2c5;
-  --accent: #9a3d1f;      /* burnt terracotta, 6.4:1 on --bg */
-  --accent-contrast: #ffffff;
-  --focus: #1f5fbf;
+  /* Black & gold */
+  --bg: #0a0a0b;          /* near-black */
+  --bg-alt: #111113;      /* alternating sections */
+  --surface: #161618;     /* cards, pills */
+  --text: #f2ede3;        /* warm ivory, 17:1 on --bg */
+  --muted: #a39d92;       /* 7.3:1 on --bg */
+  --line: #2a2723;        /* hairlines */
+  --line-gold: rgb(201 168 92 / .35);
+  --accent: #c9a85c;      /* antique gold, 9.4:1 on --bg */
+  --accent-light: #e9d49a;
+  --accent-contrast: #0a0a0b;
+  --gold-gradient: linear-gradient(135deg, #f3e2a9 0%, #c9a85c 45%, #8f6d2c 100%);
+  --focus: #e9d49a;
 
   --radius: 14px;
   --max: 1120px;
-  --shadow: 0 1px 2px rgb(0 0 0 / .05), 0 8px 24px rgb(0 0 0 / .06);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #16140f;
-    --bg-alt: #1e1b15;
-    --surface: #232019;
-    --text: #f1ece2;
-    --muted: #b5ad9f;
-    --line: #3a352c;
-    --accent: #f0956f;
-    --accent-contrast: #1a120d;
-    --focus: #8ab4ff;
-    --shadow: 0 1px 2px rgb(0 0 0 / .4), 0 8px 24px rgb(0 0 0 / .35);
-  }
+  --shadow: 0 1px 2px rgb(0 0 0 / .5), 0 12px 32px rgb(0 0 0 / .55);
 }
 
 /* ---------- Base ---------- */
@@ -469,3 +459,63 @@ p { margin: 0 0 1em; }
   .section-alt { background: none; }
   .js .reveal { opacity: 1; transform: none; }
 }
+
+/* =========================================================
+   Black & gold finishing touches
+   ========================================================= */
+::selection { background: var(--accent); color: var(--accent-contrast); }
+
+/* Gold surname in the hero */
+.hero h1 .gold {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Soft gold glow behind the hero */
+.hero { position: relative; overflow: hidden; }
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(640px circle at 78% 48%, rgb(201 168 92 / .13), transparent 70%);
+  pointer-events: none;
+}
+.hero-inner { position: relative; }
+
+/* Thin gold frame around the portrait */
+.hero-photo img {
+  border: 1px solid var(--line-gold);
+  box-shadow: 0 0 0 8px var(--bg), 0 0 0 9px var(--line-gold), var(--shadow);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--gold-gradient);
+  border-color: transparent;
+  color: var(--accent-contrast);
+}
+.btn-primary:hover { box-shadow: 0 6px 24px rgb(201 168 92 / .25); }
+
+/* Gold hairlines between sections */
+.section { border-top: 1px solid var(--line); }
+.section-head h2::after,
+.contact h2::after {
+  content: "";
+  display: block;
+  width: 3rem; height: 1px;
+  margin-top: .9rem;
+  background: var(--gold-gradient);
+}
+.contact h2::after { margin-inline: auto; }
+
+.section-num { color: var(--accent); letter-spacing: .08em; }
+
+/* Cards & pills pick up gold on hover */
+.card:hover, .card:focus-within { border-color: var(--line-gold); }
+.tag-list li { border-color: var(--line-gold); color: var(--text); }
+.social-list a:hover { border-color: var(--accent); color: var(--accent-light); }
+
+.contact-email { color: var(--accent-light); }
+.site-footer { border-top: 1px solid var(--line); }

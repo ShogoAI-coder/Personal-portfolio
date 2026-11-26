@@ -27,7 +27,7 @@ your-project-folder/
 
 It works offline because it only uses fonts that are already on your computer.
 
-> **Tip:** to see the dark version, switch your computer to Dark Mode. The site follows your system setting automatically.
+> The site uses a black and gold theme for every visitor, whatever their system setting.
 
 ---
 
@@ -131,6 +131,6 @@ The page is split into clearly labelled blocks: `HERO`, `ABOUT`, `PROJECTS`, `EX
 
 ### Colours and fonts
 
-Open **`styles.css`**. The colours are all at the top under `:root` (light mode) and the `prefers-color-scheme: dark` block just below it (dark mode). Change `--accent` to restyle buttons, links and highlights in one place.
+Open **`styles.css`**. All the colours are at the top under `:root`. Change `--accent` (and `--gold-gradient`) to restyle buttons, links and highlights in one place.
 
 The site uses fonts already on every computer, so it works offline. If you'd like a custom font, download its `.woff2` files (Google Fonts lets you download them), put them in a `fonts` folder, and ask me to wire them up.
