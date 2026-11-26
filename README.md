@@ -10,9 +10,9 @@ your-project-folder/
 ├── README.md       ← this guide
 └── images/
     ├── portrait.jpg     ← your photo
-    ├── project-1.svg    ← project screenshots (placeholders)
-    ├── project-2.svg
-    ├── project-3.svg
+    ├── karpos.svg       ← project illustrations
+    ├── bain.svg
+    ├── medical.svg
     ├── og-image.jpg     ← preview image for LinkedIn/WhatsApp links
     └── favicon.svg      ← the small icon in the browser tab
 ```
