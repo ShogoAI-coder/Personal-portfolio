@@ -9,7 +9,7 @@ your-project-folder/
 ├── script.js       ← small extras (mobile menu, fade-in, nav highlight)
 ├── README.md       ← this guide
 └── images/
-    ├── portrait.svg     ← your photo (placeholder)
+    ├── portrait.jpg     ← your photo
     ├── project-1.svg    ← project screenshots (placeholders)
     ├── project-2.svg
     ├── project-3.svg
